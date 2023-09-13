@@ -12,6 +12,7 @@ A 16-bit computer, made with Logisim and Python, with fully custom ISA.
 # Assembly Instruction
 ```
 Opcode    Instruction               Description                                          Mathematical Representation
+(Bin)
 ---------------------------------------------------------------------------------------------------------------------
 00000     LDA    ADDR REGS          Load data from ADDR to REGS                          REGS = [ADDR]
 00001     STA    ADDR REGS          Store data to ADDR from REGS                         [ADDR] = REGS
@@ -45,30 +46,43 @@ Opcode    Instruction               Description                                 
 ## Instruction Byte Structure
 Memory-Addressing Instructions (LDA, STA, JMP, JIF, INB, OUTB)
 ```
-XXXX XPPP RRRR 0000
-```
+Byte 1:  XXXX XPPP RRRR 0000
 X = Opcode [5b] (as specified in Assembly Instruction)
 P = I/O Port [3b] (as specified in I/O Port Mapping)
 R = Register [4b] (as specified in Register Addressing)
+Byte 2:  MMMM MMMM MMMM MMMM
+M = Memory Address [16b] (as specified in Memory Allocation)
+```
+Immediate-Value Instructions (LDI)
+```
+Byte 1: XXXX X000 RRRR 0000
+X = Opcode [5b] (as specified in Assembly Instruction)
+R = Register [4b] (as specified in Register Addressing)
+Byte 2:  VVVV VVVV VVVV VVVV
+V = Immediate Value [16b] (ranges from 0 to 65535)
+```
 
 ## Register Addressing
 ```
-0  ACC      Accumulator, one-way (ALU --> ACC)
-1  ALB      ALU B Input, one-way (BUS --> ALB)
-2  MUC      ALU Mul LSB, one-way (ALU --> MUC)
-3  RDW      Register D, two-way
-4  REW      Register E, two-way
-5  RFW      Register F, two-way
-6  RGW      Register G, two-way
-7  RHW      Register H, two-way
-8  RJW      Register J, two-way
-9  RLW      Register L, two-way
-a  RMW      Register M, two-way
-b  RNW      Register N, two-way
-c  RPW      Register P, two-way
-d  RQW      Register Q, two-way
-e  RRW      Register R, two-way
-f  RSW      Register S, two-way
+Code   Regs     Usage
+(Hex)
+------------------------------------------------------------
+0      ACC      Accumulator, one-way (ALU --> ACC)
+1      ALB      ALU B Input, one-way (BUS --> ALB)
+2      MUC      ALU Mul LSB, one-way (ALU --> MUC)
+3      RDW      Register D, two-way
+4      REW      Register E, two-way
+5      RFW      Register F, two-way
+6      RGW      Register G, two-way
+7      RHW      Register H, two-way
+8      RJW      Register J, two-way
+9      RLW      Register L, two-way
+a      RMW      Register M, two-way
+b      RNW      Register N, two-way
+c      RPW      Register P, two-way
+d      RQW      Register Q, two-way
+e      RRW      Register R, two-way
+f      RSW      Register S, two-way
 ```
 ## ALU Flag Conditions
 ```
