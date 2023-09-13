@@ -118,12 +118,15 @@ Code     Flag    Description
 ```
 ## I/O Port Mapping
 ```
-BCDX    7-segment output screen (TBD)
-XKEY    Hexadecimal keyboard (TBD)
-BEEP    Beep spekaer output (TBD)
-PIO3    Port 3, unallocated
-PIO4    Port 4, unallocated
-PIO5    Port 5, unallocated
-PIO6    Port 6, unallocated
-PIO7    Port 7, unallocated
+Code     Port    Description
+(Bin)
+------------------------------------------------------------
+000      BCDX    7-segment output screen (TBD)
+001      XKEY    Hexadecimal keyboard (TBD)
+010      BEEP    Beep spekaer output (TBD)
+011      PIO3    Port 3, unallocated
+100      PIO4    Port 4, unallocated
+101      PIO5    Port 5, unallocated
+110      PIO6    Port 6, unallocated
+111      PIO7    Port 7, unallocated
 ```
