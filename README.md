@@ -1,5 +1,5 @@
 # Worder16
-A 16-bit computer, made with Logisim and Python, with fully custom ISA.
+A 16-bit computer, made with Logisim and Python, with fully custom RISC ISA.
 
 # Features
 - Main memory of 128KBytes (64KWord)
@@ -47,11 +47,10 @@ Opcode    Instruction        Length       Description                           
 Memory-Addressing Instructions (`LDA, STA, INB, OUTB`)
 ```
 Byte 1:  XXXX XPPP RRRR 0000
+Byte 2:  MMMM MMMM MMMM MMMM
 X = Opcode [5b] (as specified in Assembly Instruction)
 P = I/O Port [3b] (as specified in I/O Port Mapping)
 R = Register [4b] (as specified in Register Addressing)
-
-Byte 2:  MMMM MMMM MMMM MMMM
 M = Memory Address [16b] (as specified in Memory Allocation)
 ```
 Stack Operations Instructions (`PUSH, POP`)
@@ -63,10 +62,9 @@ R = Register [4b] (as specified in Register Addressing)
 Immediate-Value Instructions (`LDI`)
 ```
 Byte 1:  XXXX X000 RRRR 0000
+Byte 2:  VVVV VVVV VVVV VVVV
 X = Opcode [5b] (as specified in Assembly Instruction)
 R = Register [4b] (as specified in Register Addressing)
-
-Byte 2:  VVVV VVVV VVVV VVVV
 V = Immediate Value [16b] (ranges from 0 to 65535)
 ```
 Double-Register Instructions (`MOV` & Math Instructions)
@@ -79,8 +77,10 @@ B = Register 2 [4b] (as specified in Register Addressing)
 Address Jump Instructions (`JMP, JIF`)
 ```
 Byte 1:  XXXX X000 000F FFFF
+Byte 2:  MMMM MMMM MMMM MMMM
 X = Opcode [5b] (as specified in Assembly Instruction)
 F = Flags [5b] (as specified in ALU Flag Conditions)
+M = Memory Address [16b] (as specified in Memory Allocation)
 ```
 
 ## Register Addressing
@@ -129,4 +129,17 @@ Code     Port    Description
 101      PIO5    Port 5, unallocated
 110      PIO6    Port 6, unallocated
 111      PIO7    Port 7, unallocated
+```
+
+## Memory Usage Mapping
+```
+Memory          Usage                       Size
+Location
+------------------------------------------------------------
+0000 - 2FFF     Code memory                 (25756 Bytes / 12878 Words)
+3000 - 31FF     Stack memory                (1024 Bytes / 512 Words)
+3200 - 3FFF     Data memory                 (7166 Bytes / 3583 Words)
+4000 - 41EE     Screen ASCII char memory    (988 Bytes / 494 Words)
+41EF - 41FF     Math constants memory       (32 Bytes / 16 Words)
+4200 - FFFF     Data memory                 (97278 Bytes / 48639 Words)
 ```
