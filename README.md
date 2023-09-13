@@ -44,7 +44,6 @@ Opcode    Instruction        Length       Description                           
 
 # Instruction Set Architecture
 ## Instruction Byte Structure
-
 Memory-Addressing Instructions (`LDA, STA, INB, OUTB`)
 ```
 Byte 1:  XXXX XPPP RRRR 0000
@@ -55,14 +54,12 @@ R = Register [4b] (as specified in Register Addressing)
 Byte 2:  MMMM MMMM MMMM MMMM
 M = Memory Address [16b] (as specified in Memory Allocation)
 ```
-
 Stack Operations Instructions (`PUSH, POP`)
 ```
 Byte 1:  XXXX X000 RRRR 0000
 X = Opcode [5b] (as specified in Assembly Instruction)
 R = Register [4b] (as specified in Register Addressing)
 ```
-
 Immediate-Value Instructions (`LDI`)
 ```
 Byte 1:  XXXX X000 RRRR 0000
@@ -72,7 +69,6 @@ R = Register [4b] (as specified in Register Addressing)
 Byte 2:  VVVV VVVV VVVV VVVV
 V = Immediate Value [16b] (ranges from 0 to 65535)
 ```
-
 Double-Register Instructions (`MOV` & Math Instructions)
 ```
 Byte 1:  XXXX X000 AAAA BBBB
@@ -80,7 +76,6 @@ X = Opcode [5b] (as specified in Assembly Instruction)
 A = Register 1 [4b] (as specified in Register Addressing)
 B = Register 2 [4b] (as specified in Register Addressing)
 ```
-
 Address Jump Instructions (`JMP, JIF`)
 ```
 Byte 1:  XXXX X000 000F FFFF
