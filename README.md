@@ -22,7 +22,7 @@ OUTB   ADDR PORT          Output from ADDR to PORT                             [
 PUSH   REGS               Push data from REGS to stack                         SP = REGS: SP++
 POP    REGS               Pop data to REGS from stack                          REGS = SP: SP--
 NOP                       No operation
-HLT                       Halt operation, reset counter until interrupt
+HLT                       Halt CPU, reset cycle counter until interrupt
 ADD    REG1 REG2 C        Add REG1 with REG2 with C(arry)                      ACC = REG1 + REG2 + C
 SUB    REG1 REG2 B        Subtract REG1 by REG2 with B(orrow)                  ACC = REG1 - REG2 - B
 MUL    REG1 REG2          Multiply REG1 by REG2, unsigned operation            ACC = 15;8(REG1 * REG2); MUC = 7;0(REG1 * REG2)
