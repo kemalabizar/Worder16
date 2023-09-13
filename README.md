@@ -44,7 +44,9 @@ Opcode    Instruction               Description                                 
 # Instruction Set Architecture
 ## Instruction Byte Structure
 Memory-Addressing Instructions (LDA, STA, JMP, JIF, INB, OUTB)
-``` XXXX XPPP RRRR 0000 ```
+```
+XXXX XPPP RRRR 0000
+```
 X = Opcode [5b] (as specified in Assembly Instruction)
 P = I/O Port [3b] (as specified in I/O Port Mapping)
 R = Register [4b] (as specified in Register Addressing)
