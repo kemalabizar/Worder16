@@ -131,15 +131,15 @@ Code     Port    Description
 111      PIO7    Port 7, unallocated
 ```
 
-## Memory Usage Mapping
+## Memory Allocation
 ```
-Memory          Usage                       Size
-Location
-------------------------------------------------------------
-0000 - 2FFF     Code memory                 (25756 Bytes / 12878 Words)
-3000 - 31FF     Stack memory                (1024 Bytes / 512 Words)
-3200 - 3FFF     Data memory                 (7166 Bytes / 3583 Words)
-4000 - 41EE     Screen ASCII char memory    (988 Bytes / 494 Words)
-41EF - 41FF     Math constants memory       (32 Bytes / 16 Words)
-4200 - FFFF     Data memory                 (97278 Bytes / 48639 Words)
+Memory Location       Usage                       Size
+(Hex)
+-------------------------------------------------------------------------
+0000 - 2FFF           Code memory           (25756 Bytes / 12878 Words)
+3000 - 31FF           Stack memory          (1024 Bytes / 512 Words)
+3200 - 3FFF           Data memory           (7166 Bytes / 3583 Words)
+4000 - 41EE           Screen char memory    (988 Bytes / 494 Words)
+41EF - 41FF           Math const memory     (32 Bytes / 16 Words)
+4200 - FFFF           Data memory           (97278 Bytes / 48639 Words)
 ```
