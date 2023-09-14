@@ -132,6 +132,8 @@ Code     Port    Description
 ```
 
 ## Memory Allocation
+The computer's memory is of 65536 Words in size, or 131070 Bytes. For screen appearance,
+there would be ASCII screen with its own processor, to write characters.
 ```
 Memory Location       Usage                       Size
 (Hex)
@@ -143,3 +145,8 @@ Memory Location       Usage                       Size
 41EF - 41FF           Math const memory     (32 Bytes / 16 Words)
 4200 - FFFF           Data memory           (97278 Bytes / 48639 Words)
 ```
+
+# Assembler Program
+**DISCLAIMER:** **Before using the Worder16, make sure the Worder16 file is in C: drive for Windows!**
+To use the assembler, named `w16asm.py`, open command prompt and change directory to /Worder16.
+Type this following command: `python w16asm.py <filename.asm>`
