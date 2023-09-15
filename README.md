@@ -22,8 +22,8 @@ Opcode    Instruction        Length       Description                           
 00101     JIF    ADDR FLAG     2          Jump to next instruction at ADDR if FLAG is true     FLAG ?= ALUCF; [PC] = ADDR
 00110     INB    ADDR PORT     2          Input to ADDR from PORT                              [ADDR] = [PORT]
 00111     OUTB   ADDR PORT     2          Output from ADDR to PORT                             [PORT] = [ADDR]
-01000     PUSH   REGS          1          Push data from REGS to stack                         SP = REGS: SP++
-01001     POP    REGS          1          Pop data to REGS from stack                          REGS = SP: SP--
+01000     PUSH   REGS          1          Push data from REGS to stack                         SP = REGS; SP++
+01001     POP    REGS          1          Pop data to REGS from stack                          REGS = SP; SP--
 01010     NOP                  1          No operation
 01011     HLT                  1          Halt CPU, reset cycle counter until interrupt
 10000     ADD    REG1 REG2 C   1          Add REG1 with REG2 with C(arry)                      ACC = REG1 + REG2 + C
