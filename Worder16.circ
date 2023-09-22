@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project source="3.8.0" version="1.0">
-  This file is intended to be loaded by Logisim-evolution v3.8.0(https://github.com/logisim-evolution/).
+<project source="3.7.2" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v3.7.2(https://github.com/logisim-evolution/).
 
   <lib desc="#Wiring" name="0">
     <tool name="Splitter">
@@ -108,7 +108,6 @@
     </tool>
     <tool name="LED">
       <a name="color" val="#81f0ce"/>
-      <a name="facing" val="north"/>
     </tool>
     <tool name="LedBar">
       <a name="matrixcols" val="5"/>
@@ -178,7 +177,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="8.0"/>
+    <a name="simulationFrequency" val="16.0"/>
     <comp lib="0" loc="(1000,2250)" name="Pull Resistor">
       <a name="facing" val="north"/>
     </comp>
@@ -1740,6 +1739,7 @@
     <comp lib="4" loc="(140,1840)" name="Counter">
       <a name="appearance" val="logisim_evolution"/>
       <a name="max" val="0x1f"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="4" loc="(1440,1080)" name="Register">
@@ -1972,37 +1972,12 @@
 8*0 3 8 0 0 b 11*0 3
 8 14*0 3 8 0 0 b 0
 80 104 9*0 8 15*0 8 0 0
-b 11*0 3 8 0 0 b 11*0
-3 8 0 0 40 30 10*0 3
-8 0 0 40 10 10*0 3 8
-14*0 3 8 14*0 3 8 14*0 3
+b 0 80 100 8*0 3 8 0
+0 b 0 80 100 8*0 3 8
+0 0 40 30 10*0 3 8 0
+0 40 10 10*0 3 8 14*0 3
 8 14*0 3 8 14*0 3 8 14*0
-3 8 0 0 0 200 10*0 3
-8 0 0 0 200 10*0 3 8
-0 0 0 200 10*0 3 8 0
-0 0 200 10*0 3 8 0 0
-0 200 10*0 3 8 0 0 0
-200 10*0 3 8 0 0 0 200
-10*0 3 8 0 0 0 200 10*0
-3 8 0 0 0 200 10*0 3
-8 0 0 0 200 10*0 3 8
-0 0 0 200 10*0 3 8 0
-0 0 200 10*0 3 8 0 0
-0 200 10*0 3 8 0 0 0
-200 10*0 3 8 0 0 0 200
-10*0 3 8 0 0 0 200 10*0
-3 8 0 0 b 0 80 100
-8*0 3 8 0 0 b 0 80
-100 8*0 3 8 0 0 b 11*0
-3 8 14*0 3 8 0 0 b
-0 80 104 9*0 8 0 0 b
-0 80 104 9*0 8 0 0 b
-11*0 3 8 0 0 b 11*0 3
-8 0 0 40 30 10*0 3 8
-0 0 40 10 10*0 3 8 14*0
 3 8 14*0 3 8 14*0 3 8
-14*0 3 8 14*0 3 8 14*0 3
-8 0 0 0 200 10*0 3 8
 0 0 0 200 10*0 3 8 0
 0 0 200 10*0 3 8 0 0
 0 200 10*0 3 8 0 0 0
@@ -2016,6 +1991,33 @@ b 11*0 3 8 0 0 b 11*0
 200 10*0 3 8 0 0 0 200
 10*0 3 8 0 0 0 200 10*0
 3 8 0 0 0 200 10*0 3
+8 0 0 0 200 10*0 3 8
+0 0 b 0 80 100 8*0 3
+8 0 0 b 0 80 100 8*0
+3 8 0 0 b 11*0 3 8
+14*0 3 8 0 0 b 0 80
+104 9*0 8 0 0 b 0 80
+104 9*0 8 0 0 b 0 80
+100 8*0 3 8 0 0 b 0
+80 100 8*0 3 8 0 0 40
+30 10*0 3 8 0 0 40 10
+10*0 3 8 14*0 3 8 14*0 3
+8 14*0 3 8 14*0 3 8 14*0
+3 8 14*0 3 8 0 0 0
+200 10*0 3 8 0 0 0 200
+10*0 3 8 0 0 0 200 10*0
+3 8 0 0 0 200 10*0 3
+8 0 0 0 200 10*0 3 8
+0 0 0 200 10*0 3 8 0
+0 0 200 10*0 3 8 0 0
+0 200 10*0 3 8 0 0 0
+200 10*0 3 8 0 0 0 200
+10*0 3 8 0 0 0 200 10*0
+3 8 0 0 0 200 10*0 3
+8 0 0 0 200 10*0 3 8
+0 0 0 200 10*0 3 8 0
+0 0 200 10*0 3 8 0 0
+0 200 10*0 3
 </a>
       <a name="dataWidth" val="10"/>
       <a name="label" val="Rom_CounterControl"/>
@@ -2378,6 +2380,12 @@ b 11*0 3 8 0 0 b 11*0
       <a name="decimalPoint" val="false"/>
       <a name="labelvisible" val="true"/>
     </comp>
+    <comp lib="5" loc="(450,2080)" name="LED">
+      <a name="color" val="#16f000"/>
+    </comp>
+    <comp lib="5" loc="(450,2100)" name="LED">
+      <a name="color" val="#16f000"/>
+    </comp>
     <comp lib="5" loc="(450,750)" name="Hex Digit Display">
       <a name="decimalPoint" val="false"/>
     </comp>
@@ -2528,10 +2536,12 @@ b 11*0 3 8 0 0 b 11*0
       <a name="halign" val="left"/>
       <a name="text" val="Memory Unit"/>
     </comp>
-    <comp loc="(2100,530)" name="customcomparator"/>
-    <wire from="(100,100)" to="(100,2300)"/>
+    <comp loc="(2120,510)" name="customcomparator"/>
+    <wire from="(100,100)" to="(100,680)"/>
     <wire from="(100,100)" to="(1220,100)"/>
     <wire from="(100,2300)" to="(1220,2300)"/>
+    <wire from="(100,680)" to="(100,2300)"/>
+    <wire from="(100,680)" to="(170,680)"/>
     <wire from="(1000,2230)" to="(1000,2250)"/>
     <wire from="(1000,2230)" to="(2060,2230)"/>
     <wire from="(1000,670)" to="(1000,2230)"/>
@@ -2597,11 +2607,14 @@ b 11*0 3 8 0 0 b 11*0
     <wire from="(1160,2070)" to="(1930,2070)"/>
     <wire from="(1190,120)" to="(1190,2270)"/>
     <wire from="(1190,2270)" to="(1430,2270)"/>
+    <wire from="(120,1730)" to="(430,1730)"/>
     <wire from="(120,1770)" to="(120,1790)"/>
     <wire from="(120,1860)" to="(120,1870)"/>
     <wire from="(120,1860)" to="(140,1860)"/>
     <wire from="(120,1870)" to="(120,1930)"/>
     <wire from="(120,1870)" to="(140,1870)"/>
+    <wire from="(120,340)" to="(120,1730)"/>
+    <wire from="(120,340)" to="(150,340)"/>
     <wire from="(1200,110)" to="(1200,2280)"/>
     <wire from="(1200,2280)" to="(2160,2280)"/>
     <wire from="(1220,100)" to="(1220,450)"/>
@@ -2651,6 +2664,7 @@ b 11*0 3 8 0 0 b 11*0
     <wire from="(1280,210)" to="(1280,1680)"/>
     <wire from="(1290,1570)" to="(1440,1570)"/>
     <wire from="(1290,210)" to="(1290,1570)"/>
+    <wire from="(130,1720)" to="(440,1720)"/>
     <wire from="(130,1740)" to="(130,1750)"/>
     <wire from="(130,1770)" to="(130,1780)"/>
     <wire from="(130,1780)" to="(140,1780)"/>
@@ -2659,6 +2673,8 @@ b 11*0 3 8 0 0 b 11*0
     <wire from="(130,1890)" to="(130,1910)"/>
     <wire from="(130,1890)" to="(140,1890)"/>
     <wire from="(130,1910)" to="(140,1910)"/>
+    <wire from="(130,370)" to="(130,1720)"/>
+    <wire from="(130,370)" to="(160,370)"/>
     <wire from="(1300,1460)" to="(1440,1460)"/>
     <wire from="(1300,210)" to="(1300,1460)"/>
     <wire from="(1310,1350)" to="(1440,1350)"/>
@@ -2723,10 +2739,11 @@ b 11*0 3 8 0 0 b 11*0
     <wire from="(1440,670)" to="(1450,670)"/>
     <wire from="(150,1770)" to="(150,1790)"/>
     <wire from="(150,190)" to="(180,190)"/>
-    <wire from="(150,210)" to="(150,390)"/>
+    <wire from="(150,210)" to="(150,340)"/>
     <wire from="(150,210)" to="(190,210)"/>
     <wire from="(150,2140)" to="(150,2170)"/>
     <wire from="(150,2170)" to="(340,2170)"/>
+    <wire from="(150,340)" to="(150,390)"/>
     <wire from="(150,440)" to="(150,450)"/>
     <wire from="(150,540)" to="(150,700)"/>
     <wire from="(150,540)" to="(170,540)"/>
@@ -2968,10 +2985,10 @@ b 11*0 3 8 0 0 b 11*0
     <wire from="(2040,290)" to="(2110,290)"/>
     <wire from="(2040,370)" to="(2040,450)"/>
     <wire from="(2040,370)" to="(2110,370)"/>
-    <wire from="(2040,450)" to="(2040,540)"/>
+    <wire from="(2040,450)" to="(2040,520)"/>
     <wire from="(2040,450)" to="(2110,450)"/>
-    <wire from="(2040,540)" to="(2040,600)"/>
-    <wire from="(2040,540)" to="(2080,540)"/>
+    <wire from="(2040,520)" to="(2040,600)"/>
+    <wire from="(2040,520)" to="(2080,520)"/>
     <wire from="(2040,600)" to="(2040,670)"/>
     <wire from="(2040,600)" to="(2110,600)"/>
     <wire from="(2040,670)" to="(2040,740)"/>
@@ -2998,10 +3015,10 @@ b 11*0 3 8 0 0 b 11*0
     <wire from="(2060,270)" to="(2110,270)"/>
     <wire from="(2060,350)" to="(2060,430)"/>
     <wire from="(2060,350)" to="(2110,350)"/>
-    <wire from="(2060,430)" to="(2060,520)"/>
+    <wire from="(2060,430)" to="(2060,510)"/>
     <wire from="(2060,430)" to="(2110,430)"/>
-    <wire from="(2060,520)" to="(2060,580)"/>
-    <wire from="(2060,520)" to="(2080,520)"/>
+    <wire from="(2060,510)" to="(2060,580)"/>
+    <wire from="(2060,510)" to="(2080,510)"/>
     <wire from="(2060,580)" to="(2060,650)"/>
     <wire from="(2060,580)" to="(2110,580)"/>
     <wire from="(2060,650)" to="(2060,720)"/>
@@ -3249,10 +3266,14 @@ b 11*0 3 8 0 0 b 11*0
     <wire from="(420,500)" to="(420,680)"/>
     <wire from="(420,500)" to="(440,500)"/>
     <wire from="(420,680)" to="(600,680)"/>
+    <wire from="(430,1730)" to="(430,2100)"/>
+    <wire from="(430,2100)" to="(450,2100)"/>
     <wire from="(430,390)" to="(430,420)"/>
     <wire from="(430,420)" to="(580,420)"/>
     <wire from="(440,130)" to="(1740,130)"/>
     <wire from="(440,130)" to="(440,430)"/>
+    <wire from="(440,1720)" to="(440,2080)"/>
+    <wire from="(440,2080)" to="(450,2080)"/>
     <wire from="(440,430)" to="(460,430)"/>
     <wire from="(440,450)" to="(440,470)"/>
     <wire from="(440,450)" to="(450,450)"/>
@@ -3448,7 +3469,6 @@ b 11*0 3 8 0 0 b 11*0
     <wire from="(890,2130)" to="(890,2140)"/>
     <wire from="(890,420)" to="(890,1370)"/>
     <wire from="(890,420)" to="(910,420)"/>
-    <wire from="(90,680)" to="(170,680)"/>
     <wire from="(900,180)" to="(900,1310)"/>
     <wire from="(900,180)" to="(910,180)"/>
     <wire from="(910,1540)" to="(920,1540)"/>
@@ -3491,16 +3511,16 @@ b 11*0 3 8 0 0 b 11*0
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="4.0"/>
     <appear>
-      <rect fill="none" height="60" stroke="#000000" stroke-width="3" width="40" x="50" y="50"/>
-      <circ-anchor facing="east" x="70" y="80"/>
-      <circ-port dir="in" pin="350,180" x="50" y="70"/>
-      <circ-port dir="in" pin="350,200" x="50" y="90"/>
-      <circ-port dir="in" pin="410,150" x="70" y="50"/>
-      <circ-port dir="out" pin="550,160" x="90" y="60"/>
-      <circ-port dir="out" pin="550,180" x="90" y="70"/>
-      <circ-port dir="out" pin="550,200" x="90" y="80"/>
-      <circ-port dir="out" pin="550,220" x="90" y="90"/>
-      <circ-port dir="out" pin="550,240" x="90" y="100"/>
+      <rect fill="none" height="60" stroke="#000000" stroke-width="3" width="40" x="230" y="50"/>
+      <circ-anchor facing="east" height="6" width="6" x="267" y="57"/>
+      <circ-port height="10" pin="550,160" width="10" x="265" y="55"/>
+      <circ-port height="10" pin="550,180" width="10" x="265" y="65"/>
+      <circ-port height="10" pin="550,200" width="10" x="265" y="75"/>
+      <circ-port height="10" pin="550,220" width="10" x="265" y="85"/>
+      <circ-port height="10" pin="550,240" width="10" x="265" y="95"/>
+      <circ-port height="8" pin="350,180" width="8" x="226" y="56"/>
+      <circ-port height="8" pin="350,200" width="8" x="226" y="66"/>
+      <circ-port height="8" pin="410,150" width="8" x="236" y="46"/>
     </appear>
     <comp lib="0" loc="(350,180)" name="Pin">
       <a name="appearance" val="NewPins"/>
