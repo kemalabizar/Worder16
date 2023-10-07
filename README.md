@@ -1,5 +1,5 @@
 # Worder16
-A 16-bit computer, made with Logisim and Python, with fully custom RISC ISA.
+A 16-bit computer, made with Logisim and Python, with fully custom RISC(ish) ISA.
 
 # Features
 - Main memory of 128KBytes (64KWord)
@@ -8,6 +8,9 @@ A 16-bit computer, made with Logisim and Python, with fully custom RISC ISA.
 - 8 I/O ports, mapped for peripherals
 - Equal execution cycle of every instructions (32 clock cycles)
 - 26 instruction RISC architecture
+
+# Computer Circuit Schematics
+![CircuitImage](https://github.com/kemalabizar/Worder16/assets/73152134/62e61545-1b08-4f88-81af-1695c9c53730)
 
 # Assembly Instruction
 ```
@@ -147,6 +150,6 @@ Memory Location       Usage                       Size
 ```
 
 # Assembler Program
-**DISCLAIMER:** **Before using the Worder16, make sure the Worder16 file is in C: drive for Windows!**
+**DISCLAIMER:** **Before using the Worder16, make sure the Worder16 file is in `C:\` drive for Windows!**
 To use the assembler, named `w16asm.py`, open command prompt and change directory to /Worder16.
 Type this following command: `python w16asm.py <filename.asm>`
